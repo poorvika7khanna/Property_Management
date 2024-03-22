@@ -31,12 +31,6 @@ public class PropertyServiceImpl implements PropertyService {
     @Override
     public List<PropertyDTO> getAllProperties() {
         List<PropertyEntity> entityList = (List<PropertyEntity>)propertyRepository.findAll();
-//        List<PropertyDTO> propList = new ArrayList<>();
-//        for(PropertyEntity pe:entityList)
-//        {
-//            PropertyDTO propDto=propertyConverter.convertEntityToDTO(pe);
-//            propList.add(propDto);
-//        }
         List<PropertyDTO> propList = entityList.stream()
                 .map(propertyConverter::convertEntityToDTO)
                 .collect(Collectors.toList());

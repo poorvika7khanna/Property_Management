@@ -1,23 +1,24 @@
 package com.mycompany.Property_Management.entity;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.apache.el.parser.AstFalse;
 
 @Entity
-@Table(name = "PROPERTY")
+@Table(name = "USER")
 @Getter
 @Setter
 @NoArgsConstructor
-public class PropertyEntity {
+public class UserEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
-    private String description;
-    private String owner;
+    private String ownerName;
     private String email;
-    private Double price;
-    private String address;
+    private String phone;
+    private String password;
 }
